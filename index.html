@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учет калорий - Калории Трекер</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Калории Трекер</h1>
+            <p class="subtitle">Отслеживайте свои калории легко</p>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-list-ul"></i> Учет калорий</a></li>
+                    <li><a href="photo-analysis.html"><i class="fas fa-camera"></i> Анализ фото</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Профиль</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="card form-card">
+                <h2>Добавить продукт</h2>
+                <form id="food-form">
+                    <div class="form-group">
+                        <label for="food-name">Название продукта</label>
+                        <input type="text" id="food-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="calories">Калории</label>
+                        <input type="number" id="calories" min="1" required>
+                    </div>
+                    <button type="submit" class="btn add-btn">
+                        <i class="fas fa-plus"></i> Добавить
+                    </button>
+                </form>
+            </div>
+
+            <div class="card summary-card">
+                <h2>Сегодня</h2>
+                <div class="total-calories">
+                    <div class="circle">
+                        <span id="total-calories">0</span>
+                    </div>
+                    <p>Всего калорий</p>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="calories-progress-bar"></div>
+                </div>
+                <p class="calories-info" id="calories-info">0% от дневной нормы</p>
+            </div>
+
+            <div class="card list-card">
+                <h2>Дневник питания</h2>
+                <ul id="food-list" class="food-list">
+                    <!-- Здесь будут добавляться продукты -->
+                </ul>
+                <div class="empty-state" id="empty-state">
+                    <i class="fas fa-utensils"></i>
+                    <p>Добавьте свой первый продукт</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Разработано с <i class="fas fa-heart"></i></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
