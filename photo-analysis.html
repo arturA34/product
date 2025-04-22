@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ фото - Калории Трекер</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Удаляем ссылку на Clarifai SDK, так как он больше не используется -->
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Калории Трекер</h1>
+            <p class="subtitle">Отслеживайте свои калории легко</p>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-list-ul"></i> Учет калорий</a></li>
+                    <li><a href="photo-analysis.html" class="active"><i class="fas fa-camera"></i> Анализ фото</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Профиль</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="card photo-card full-width">
+                <h2>Анализ фото еды</h2>
+                <form id="photo-form">
+                    <div class="photo-upload-container">
+                        <div class="photo-preview" id="photo-preview">
+                            <i class="fas fa-camera"></i>
+                            <p>Загрузите фото еды для анализа</p>
+                        </div>
+                        <input type="file" id="food-photo" accept="image/*" class="hidden-input">
+                        <label for="food-photo" class="upload-btn btn">
+                            <i class="fas fa-upload"></i> Выбрать фото
+                        </label>
+                    </div>
+                    <!-- Удаляем блок для ввода API ключа -->
+                    <button type="submit" class="btn analyze-btn" disabled>
+                        <i class="fas fa-search"></i> Анализировать
+                    </button>
+                </form>
+                <div class="analysis-result" id="analysis-result">
+                    <!-- Здесь будут результаты анализа фото -->
+                </div>
+                <div class="loading-container" id="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p>Анализируем изображение...</p>
+                </div>
+            </div>
+
+            <div class="card info-card">
+                <h2>Как это работает</h2>
+                <div class="info-content">
+                    <p>Наша технология анализирует фото еды, определяет продукты по их цветовым характеристикам и рассчитывает примерную калорийность.</p>
+                    <ol>
+                        <li>Загрузите фото вашей еды</li>
+                        <li>Нажмите кнопку "Анализировать"</li>
+                        <li>Получите результаты анализа с количеством калорий</li>
+                        <li>Добавьте нужные продукты в ваш дневник питания</li>
+                    </ol>
+                    <div class="tips">
+                        <h3>Советы для лучших результатов:</h3>
+                        <ul>
+                            <li>Фотографируйте еду при хорошем освещении</li>
+                            <li>Убедитесь, что все продукты хорошо видны</li>
+                            <li>Размещайте продукты отдельно друг от друга</li>
+                            <li>Делайте снимок сверху для лучшего распознавания</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Разработано с <i class="fas fa-heart"></i></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
